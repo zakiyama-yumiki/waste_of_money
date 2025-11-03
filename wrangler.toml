@@ -2,6 +2,13 @@ name = "waste-of-money-api"
 main = "packages/api/src/index.ts"
 compatibility_date = "2025-10-21"
 
+# Workers のログ/トレースを有効化（ダッシュボードの Observability に表示）
+# console.log はデフォルトで収集されますが、トレース（リクエスト単位の可視化）を
+# 有効化することで、ログと併せて時系列で追えるようになります。
+[observability]
+enabled = true            # トレース有効化
+head_sampling_rate = 1.0  # 100% サンプリング（必要に応じて 0.1 などに調整）
+
 [[d1_databases]]
 binding = "DB"
 database_name = "wom_dev"

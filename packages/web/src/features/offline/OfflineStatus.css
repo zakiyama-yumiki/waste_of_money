@@ -1,0 +1,22 @@
+.offline-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  color: #cbd5f5;
+}
+
+.offline-status__indicator {
+  width: 0.75rem;
+  height: 0.75rem;
+  border-radius: 9999px;
+  box-shadow: 0 0 10px currentColor;
+}
+
+.offline-status__indicator--online {
+  color: #4ade80;
+}
+
+.offline-status__indicator--offline {
+  color: #f87171;
+}

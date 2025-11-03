@@ -1,0 +1,106 @@
+.amount-card {
+  margin-top: 2rem;
+  padding: 2.5rem;
+  border-radius: 2rem;
+  background: rgba(15, 23, 42, 0.9);
+  border: 1px solid rgba(148, 163, 184, 0.2);
+  box-shadow: 0 30px 60px rgba(15, 23, 42, 0.4);
+  display: grid;
+  gap: 1.5rem;
+}
+
+.amount-card__header h2 {
+  margin: 0 0 0.25rem;
+  font-size: 1.5rem;
+}
+
+.amount-card__header p {
+  margin: 0;
+  color: #cbd5f5;
+  font-size: 0.95rem;
+}
+
+.amount-card__display {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  font-size: clamp(2rem, 6vw, 3rem);
+  font-weight: 600;
+}
+
+.amount-card__display-symbol {
+  opacity: 0.65;
+}
+
+.amount-card__display-value[data-empty='true'] {
+  opacity: 0.4;
+}
+
+.amount-card__presets {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.amount-card__preset {
+  border: none;
+  border-radius: 9999px;
+  padding: 0.6rem 1.2rem;
+  font-size: 1rem;
+  background: rgba(56, 189, 248, 0.15);
+  color: #38bdf8;
+  cursor: pointer;
+  transition: transform 0.15s ease, background 0.15s ease;
+}
+
+.amount-card__preset:hover,
+.amount-card__preset:focus-visible {
+  background: rgba(56, 189, 248, 0.25);
+  transform: translateY(-1px);
+}
+
+.amount-card__keypad {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.75rem;
+}
+
+.amount-card__key {
+  border: none;
+  border-radius: 1rem;
+  padding: 0.85rem 0;
+  font-size: 1.25rem;
+  font-weight: 600;
+  background: rgba(148, 163, 184, 0.15);
+  color: #e2e8f0;
+  cursor: pointer;
+  transition: transform 0.15s ease, background 0.15s ease;
+}
+
+.amount-card__key:hover,
+.amount-card__key:focus-visible {
+  background: rgba(148, 163, 184, 0.25);
+  transform: translateY(-1px);
+}
+
+.amount-card__key--action {
+  background: rgba(244, 114, 182, 0.2);
+  color: #f472b6;
+}
+
+.amount-card__key--action:hover,
+.amount-card__key--action:focus-visible {
+  background: rgba(244, 114, 182, 0.3);
+}
+
+.amount-card__footer {
+  display: flex;
+  justify-content: flex-end;
+  color: #cbd5f5;
+  font-size: 0.95rem;
+}
+
+.amount-card__footer-hint span {
+  font-weight: 600;
+  color: #f8fafc;
+}

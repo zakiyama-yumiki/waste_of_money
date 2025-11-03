@@ -1,0 +1,52 @@
+# Dependencies
+node_modules/
+.pnpm-store/
+
+# Build outputs
+.wrangler/
+dist/
+build/
+packages/web/dist/
+packages/web/dev-dist/
+
+# Environment & Secrets
+.dev.vars
+.env
+.env.local
+
+# Generated files
+packages/shared/src/generated/openapi.d.ts
+
+# Development files
+.DS_Store
+*.log
+*.swp
+
+# Testing
+test-results/
+playwright-report/
+coverage/
+blob-report/
+
+# Editor & IDE
+.vscode/
+.idea/
+*.sublime-*
+.claude/
+.playwright-mcp/
+
+# Terraform
+infra/terraform/**/.terraform/
+infra/terraform/**/terraform.tfstate
+infra/terraform/**/terraform.tfstate.backup
+infra/terraform/**/*.tfvars
+!infra/terraform/**/*.tfvars.example
+
+# Local-only leftover files
+packages/web/src/App.tsx.old
+
+# Additional OS/Log
+pnpm-debug.log*
+npm-debug.log*
+yarn-debug.log*
+Thumbs.db

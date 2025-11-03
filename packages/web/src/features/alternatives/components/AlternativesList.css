@@ -1,0 +1,99 @@
+.alts {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.alts__list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 1rem;
+}
+
+.alts__item {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  border-radius: 1.25rem;
+  background: rgba(30, 41, 59, 0.65);
+  border: 1px solid rgba(148, 163, 184, 0.15);
+}
+
+.alts__badge {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 9999px;
+  background: rgba(56, 189, 248, 0.25);
+  color: #38bdf8;
+  font-weight: 600;
+}
+
+.alts__text {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #f8fafc;
+}
+
+.alts__source {
+  font-size: 0.85rem;
+  color: #94a3b8;
+}
+
+.alts__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.alts__action {
+  flex: 1 1 180px;
+  border: none;
+  border-radius: 1rem;
+  padding: 0.9rem 1.2rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.15s ease, background 0.15s ease, filter 0.15s ease;
+}
+
+.alts__action--avoid {
+  background: rgba(34, 197, 94, 0.2);
+  color: #4ade80;
+}
+
+.alts__action--buy {
+  background: rgba(248, 113, 113, 0.2);
+  color: #f87171;
+}
+
+.alts__action:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.alts__action:not(:disabled):hover,
+.alts__action:not(:disabled):focus-visible {
+  filter: brightness(1.1);
+  transform: translateY(-1px);
+}
+
+.alts__status {
+  margin: 0;
+  font-size: 0.95rem;
+  color: #cbd5f5;
+}
+
+.alts__status--success {
+  color: #4ade80;
+}
+
+.alts__status--error {
+  color: #f87171;
+}

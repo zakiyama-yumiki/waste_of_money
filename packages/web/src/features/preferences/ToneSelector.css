@@ -1,0 +1,63 @@
+.tone-card {
+  padding: 2rem;
+  border-radius: 1.5rem;
+  background: rgba(30, 41, 59, 0.75);
+  border: 1px solid rgba(148, 163, 184, 0.2);
+  box-shadow: 0 20px 40px rgba(15, 23, 42, 0.35);
+  display: grid;
+  gap: 1.5rem;
+}
+
+.tone-card__header h2 {
+  margin: 0;
+}
+
+.tone-card__header p {
+  margin: 0.4rem 0 0;
+  color: #cbd5f5;
+  font-size: 0.95rem;
+}
+
+.tone-card__options {
+  display: grid;
+  gap: 1rem;
+}
+
+.tone-card__option {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 1rem;
+  align-items: center;
+  padding: 1rem;
+  border-radius: 1.25rem;
+  background: rgba(15, 23, 42, 0.6);
+  border: 1px solid rgba(148, 163, 184, 0.2);
+  cursor: pointer;
+  transition: border-color 0.15s ease, transform 0.15s ease;
+}
+
+.tone-card__option input[type='radio'] {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+.tone-card__option:hover,
+.tone-card__option:focus-within {
+  border-color: rgba(56, 189, 248, 0.6);
+  transform: translateY(-1px);
+}
+
+.tone-card__option-content {
+  display: grid;
+  gap: 0.25rem;
+}
+
+.tone-card__option-label {
+  font-weight: 600;
+  font-size: 1.05rem;
+}
+
+.tone-card__option-description {
+  font-size: 0.9rem;
+  color: #cbd5f5;
+}

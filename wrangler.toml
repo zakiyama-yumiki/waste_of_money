@@ -1,0 +1,25 @@
+name = "waste-of-money-api"
+main = "packages/api/src/index.ts"
+compatibility_date = "2025-10-21"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "wom_dev"
+database_id = "local-wom"
+
+# Workers で静的アセット（フロントエンドのビルド成果物）を配信
+# Vite の出力先: packages/web/dist
+[assets]
+directory = "packages/web/dist"
+binding = "ASSETS"
+
+# Cron は Terraform で管理するため wrangler 側では未定義
+
+[env.production]
+# 本番用のD1バインディングを設定してください（wrangler d1 create で取得）
+workers_dev = true
+
+[[env.production.d1_databases]]
+binding = "DB"
+database_name = "wom_prod"
+database_id = "b3a14d90-8c3c-40e4-a85d-b16c57dcacd2"

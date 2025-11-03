@@ -1,0 +1,19 @@
+{
+  "name": "@wom/api",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "npx wrangler dev --local",
+    "dev:node": "tsx dev/server.ts"
+  },
+  "main": "src/index.ts",
+  "dependencies": {
+    "drizzle-orm": "^0.44.7",
+    "hono": "^4.5.0",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "typescript": "^5.6.3"
+  }
+}

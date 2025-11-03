@@ -1,0 +1,60 @@
+{
+  "generic": [
+    { "id": "generic-save", "tag": "savings", "template": "¥{amount}を先取り貯金して将来のご褒美に備える" },
+    { "id": "generic-health", "tag": "health", "template": "¥{amount}で旬の食材を買って自炊を楽しむ" },
+    { "id": "generic-experience", "tag": "experience", "template": "¥{amount}で気になっていた体験イベントに申し込む" },
+    { "id": "generic-invest", "tag": "invest", "template": "¥{amount}を自己投資（書籍や学習ツール）に充てる" }
+  ],
+  "categories": {
+    "drink": {
+      "gentle": [
+        { "id": "drink-gentle-thermos", "tag": "habit", "template": "同じ¥{amount}でマイボトル＋お気に入りの茶葉を買って持ち歩く" },
+        { "id": "drink-gentle-homebrew", "tag": "home", "template": "¥{amount}で豆をまとめ買いして自宅ドリップを楽しむ" }
+      ],
+      "humor": [
+        { "id": "drink-humor-water", "tag": "humor", "template": "¥{amount}で炭酸水を箱買いして『おうちカフェ』を開店する" },
+        { "id": "drink-humor-game", "tag": "fun", "template": "¥{amount}を友だちとのボードゲーム会のドリンク代にする" }
+      ],
+      "spartan": [
+        { "id": "drink-spartan-water", "tag": "discipline", "template": "¥{amount}分の白湯を飲んで節約筋を鍛える" },
+        { "id": "drink-spartan-fast", "tag": "discipline", "template": "¥{amount}を24時間断コーヒーの挑戦費に充てる" }
+      ],
+      "default": [
+        { "id": "drink-default-home", "tag": "home", "template": "¥{amount}でドリンクベースを仕込んで作り置きする" }
+      ]
+    },
+    "snack": {
+      "gentle": [
+        { "id": "snack-gentle-fruit", "tag": "health", "template": "¥{amount}で旬の果物を買ってビタミンチャージ" },
+        { "id": "snack-gentle-bake", "tag": "hobby", "template": "¥{amount}で材料を揃えて焼き菓子を手作り" }
+      ],
+      "default": [
+        { "id": "snack-default-share", "tag": "share", "template": "¥{amount}で家族や友人と分けられるおやつをまとめ買い" }
+      ]
+    },
+    "meal": {
+      "gentle": [
+        { "id": "meal-gentle-home", "tag": "home", "template": "¥{amount}でご褒美ランチを自宅で再現してみる" },
+        { "id": "meal-gentle-bento", "tag": "planning", "template": "¥{amount}で彩り弁当の食材を揃える" }
+      ],
+      "default": [
+        { "id": "meal-default-freeze", "tag": "prep", "template": "¥{amount}で冷凍ストックを充実させて平日の外食を減らす" }
+      ]
+    },
+    "hobby": {
+      "gentle": [
+        { "id": "hobby-gentle-lesson", "tag": "growth", "template": "¥{amount}でオンライン講座を受講してスキルアップ" },
+        { "id": "hobby-gentle-tool", "tag": "tool", "template": "¥{amount}で趣味の道具をメンテナンス" }
+      ],
+      "default": [
+        { "id": "hobby-default-community", "tag": "community", "template": "¥{amount}でコミュニティイベントに参加する" }
+      ]
+    },
+    "other": {
+      "default": [
+        { "id": "other-default-cleanup", "tag": "lifestyle", "template": "¥{amount}で部屋を整えるグッズを買って環境をリフレッシュ" },
+        { "id": "other-default-saving", "tag": "savings", "template": "¥{amount}を積み立てて今後の必要出費に備える" }
+      ]
+    }
+  }
+}

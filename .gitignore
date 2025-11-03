@@ -35,12 +35,7 @@ blob-report/
 .claude/
 .playwright-mcp/
 
-# Terraform
-infra/terraform/**/.terraform/
-infra/terraform/**/terraform.tfstate
-infra/terraform/**/terraform.tfstate.backup
-infra/terraform/**/*.tfvars
-!infra/terraform/**/*.tfvars.example
+# Terraform（現在 infra ディレクトリは削除済み。将来追加時の雛形は別管理）
 
 # Local-only leftover files
 packages/web/src/App.tsx.old

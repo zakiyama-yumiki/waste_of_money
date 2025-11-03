@@ -69,7 +69,13 @@ router.post('/', async (c) => {
 
   const check = altResponseSchema.safeParse(response);
   if (!check.success) {
-    return jsonError(c, 500, 'INTERNAL', 'response validation failed');
+    console.error('[alt] response validation failed', {
+      response,
+      error: check.error.flatten(),
+    });
+    return jsonError(c, 500, 'INTERNAL', 'response validation failed', {
+      details: check.error.flatten(),
+    });
   }
 
   if (idempotencyKey) {

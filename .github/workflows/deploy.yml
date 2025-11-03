@@ -64,3 +64,6 @@ jobs:
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
           command: deploy --env production
           wranglerVersion: 3.114.15
+
+      - name: Run database migrations
+        run: bash scripts/db/migrate-production.sh

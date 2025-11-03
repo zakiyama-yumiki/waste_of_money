@@ -45,7 +45,7 @@ export function AlternativesPage() {
     const fetchAlternatives = async () => {
       setAlternatives({ status: 'loading' });
       try {
-        const data = await requestAlternatives(amount, tonePreference.tone, key);
+        const data = await requestAlternatives(amount, tonePreference.tone, key ?? undefined);
         setAlternatives({ status: 'success', data });
       } catch (err) {
         setAlternatives({ status: 'error', error: (err as Error).message });
@@ -66,15 +66,17 @@ export function AlternativesPage() {
         savedAmount: amount,
         tone: tonePreference.tone,
       });
-      await offlineQueue.processQueue();
+      // メッセージを即座に表示して画面遷移（オフラインキュー処理は並行実行）
       setDecisionState({
         status: 'success',
         message: outcome === 'avoided' ? 'よく我慢できました！記録しました。' : '購入を記録しました。',
       });
-      // 1秒後に完了画面へ
+      // 画面遷移を高速化（メッセージ表示と同時）
       setTimeout(() => {
         navigate(`/done?status=${outcome}`);
-      }, 1000);
+      }, 300);
+      // バックグラウンドでオフラインキュー処理
+      void offlineQueue.processQueue();
     } catch (err) {
       if (!navigator.onLine || err instanceof TypeError) {
         offlineQueue.enqueueDecision({
@@ -87,9 +89,10 @@ export function AlternativesPage() {
           status: 'success',
           message: 'オフラインのためキューに保存しました。接続復帰後に自動送信されます。',
         });
+        // 画面遷移を高速化
         setTimeout(() => {
           navigate(`/done?status=${outcome}`);
-        }, 1000);
+        }, 300);
       } else {
         setDecisionState({ status: 'error', message: (err as Error).message });
       }

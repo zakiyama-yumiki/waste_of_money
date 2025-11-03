@@ -6,10 +6,16 @@ on:
       - main
   workflow_dispatch:
 
+concurrency:
+  group: workers-deploy-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
     timeout-minutes: 15
+    env:
+      CI: true
 
     steps:
       - name: Checkout code
@@ -49,7 +55,7 @@ jobs:
         run: pnpm generate:types
 
       - name: Build frontend
-        run: pnpm --filter web build
+        run: pnpm --filter @wom/web build
 
       - name: Deploy to Cloudflare Workers
         uses: cloudflare/wrangler-action@v3
@@ -57,3 +63,4 @@ jobs:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
           command: deploy --env production
+          wranglerVersion: 3.114.15
